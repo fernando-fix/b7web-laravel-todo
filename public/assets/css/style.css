@@ -1,5 +1,5 @@
 :root {
-    --background-light: #F0F2FA;
+    --background-light: #c0ccff;
     --background-white: #f6F5FF;
     --text-dark: #0A0040;
     --color-primary: #6143FF;
@@ -28,6 +28,13 @@ body {
 .sidebar {
     width: 100px;
     background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+}
+
+.sidebar .sidebar-logo {
+    height: 60px;
+    margin-top: 10px;
 }
 
 nav {
@@ -43,6 +50,11 @@ nav {
 .btn {
     padding: 20px 30px;
     border-radius: 10px;
+    transition: all .5s ease-in-out;
+}
+
+.btn:hover {
+    transform: scale(1.05);
 }
 
 a.btn {
@@ -61,4 +73,142 @@ main {
 
 section.graph {
     width: 33%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.graph-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.graph-header .graph-hr {
+    flex: 1;
+}
+
+.graph-header .graph-data {
+    display: flex;
+    align-items: center;
+}
+
+.graph-header .graph-data img {
+    margin: 0px 10px;
+    cursor: pointer;
+    transform: all 0.3s ease-in-out;
+}
+
+.graph-header .graph-data img:hover {
+    box-shadow: 1px 1px 10px #ccc;
+    border-radius: 15px;
+    transform: scale(1.10);
+}
+
+
+.graph-header-subtitle {
+    margin-top: 10px;
+}
+
+.graph-placeholder {
+    background-color: #7a78e0;
+    width: 300px;
+    height: 300px;
+    margin-top: 50px;
+    align-self: center;
+    background: url(/assets/img/graph.png);
+    background-size: contain;
+}
+
+.graph-header-tasks-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.list {
+    padding: 5px 15px;
+    flex: 1;
+}
+
+.list-header {
+    display: flex;
+}
+
+.list-header-select {
+    background-color: transparent;
+    border: 0;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.task-list {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.task {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 15px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid var(--background-light);
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+}
+
+.task:hover {
+    transform: scale(1.02);
+    border-radius: 10px;
+}
+
+.task:hover {
+    background-color: var(--background-light);
+}
+
+.task .title {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.task .title .task-title {
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+.priority,
+.actions {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions a {
+    margin-left: 20px;
+    margin-right: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.actions a:hover {
+    transform: scale(1.5);
+}
+
+.sphere {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
