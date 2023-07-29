@@ -1,11 +1,11 @@
 <x-layout page="Tarefas">
 
     <x-slot:btn>
-        <a href="#" class="btn btn-primary">
+        <a href="{{ route('task.create') }}" class="btn btn-primary">
             Criar tarefa
         </a>
     </x-slot:btn>
-   
+
 
     <section class="graph">
         <div class="graph-header">
@@ -36,32 +36,14 @@
                 <option value="1">Todas as tarefas</option>
             </select>
         </div>
-        @php
-            $tasks = [
-                [
-                    'id' => 1,
-                    'done' => false,
-                    'title' => 'Título 1',
-                    'category' => 'Categoria 1',
-                ],
-                [
-                    'id' => 2,
-                    'done' => true,
-                    'title' => 'Título 2',
-                    'category' => 'Categoria 2',
-                ],
-                [
-                    'id' => 3,
-                    'done' => false,
-                    'title' => 'Título 3',
-                    'category' => 'Categoria 2',
-                ],
-            ];
-        @endphp
+
         <div class="task-list">
-            <x-task :data=$tasks[0] />
-            <x-task :data=$tasks[1] />
-            <x-task :data=$tasks[2] />
+
+            @foreach ($tasks as $task)
+                <x-task :data=$task />
+            @endforeach
+
         </div>
+
     </section>
 </x-layout>

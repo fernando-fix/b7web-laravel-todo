@@ -16,7 +16,7 @@
 <body>
     <div class="container">
         <div class="sidebar">
-            <img class="sidebar-logo" src="assets/img/laravel-logo.svg" alt="logo">
+            <img class="sidebar-logo" src="/assets/img/laravel-logo.svg" alt="logo">
         </div>
         <div class="content">
             <nav>
