@@ -10,8 +10,7 @@ class HomeController extends Controller
     //
     public function index(Request $r)
     {
-        $tasks = Task::all()->take(5);
-        $data['tasks'] = $tasks;
+        $data['tasks'] = Task::all()->take(5);
 
         return view('home', $data);
     }
