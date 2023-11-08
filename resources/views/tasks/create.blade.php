@@ -6,9 +6,11 @@
         </a>
     </x-slot:btn>
 
-    <section id="create_task_section">
+    <section id="task_section">
         <h1>Criar tarefa</h1>
-        <form action="" method="">
+        <form method="POST" action="{{ route('task.edit_action') }}">
+
+            @csrf
 
             {{-- Input do título --}}
             @include('components.form.text_input', [
@@ -22,17 +24,19 @@
             @include('components.form.text_input', [
                 'label' => 'Data',
                 'name' => 'due_date',
-                'type' => 'date',
+                'type' => 'datetime-local',
                 'required' => 'Required',
             ])
 
             {{-- Input de categoria --}}
             @component('components.form.select_input', [
                 'label' => 'Categoria',
-                'name' => 'category',
+                'name' => 'category_id',
                 'required' => 'required',
             ])
-                <option value="1">Algum valor muito legal</option>
+                @foreach ($categories as $category)
+                    <option value="{{ $category->id }}">{{ $category->title }}</option>
+                @endforeach
             @endcomponent
 
             {{-- Description --}}
